@@ -19,5 +19,6 @@ public class StudentRequest {
      private String email;
      @NotNull(message = "Id requerido")
      private Long classes;
+     private Boolean active;
         
 }

@@ -2,6 +2,8 @@ package riwi.pruebadesempeno.prueba_desempeno.domain.repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -9,5 +11,5 @@ import riwi.pruebadesempeno.prueba_desempeno.domain.entities.StudentEntity;
 
 public interface StudentRepository extends JpaRepository<StudentEntity,Long>{
     
-    List<StudentEntity> findByNameOrDescriptionAndActiveTrue(String name, String description);
+    Page<StudentEntity> findByNameOrActive(String name, Boolean active,PageRequest request);
 }
