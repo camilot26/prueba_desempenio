@@ -17,8 +17,7 @@ public class LessonResponse {
    private String title;
    private String content;
    private LocalDateTime created_at;
-   private ClassResponse classEntity;
-   private List<MultimediaResponse> multimedia;
+   
    
    
 }

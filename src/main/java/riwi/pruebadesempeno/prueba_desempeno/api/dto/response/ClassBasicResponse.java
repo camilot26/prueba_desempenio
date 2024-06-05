@@ -16,5 +16,4 @@ public class ClassBasicResponse {
     private String description;
     private Boolean active;
     private LocalDateTime created_at;
-    private StudentBasicResponse response;
 }
