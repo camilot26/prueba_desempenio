@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import riwi.pruebadesempeno.prueba_desempeno.domain.entities.ClassEntity;
 
 @Data
 @Builder
@@ -18,8 +19,8 @@ public class StudentResponse {
     private String email;
     private Boolean active;
     private LocalDateTime created_at;
-    private List<ClassResponse> classes;
-    
+   
+
 
 
 }

@@ -34,9 +34,13 @@ public class ClassEntity {
     private String description;
       private LocalDateTime created_at;
     private Boolean active;
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="student_id", referencedColumnName="id")
-    private StudentEntity student;
+    @OneToMany(
+        mappedBy = "classentity",
+        cascade = CascadeType.ALL,
+        orphanRemoval = true,
+        fetch = FetchType.LAZY
+    )
+    private List<StudentEntity> students;
     @OneToMany(
         mappedBy = "classEntity",
         cascade = CascadeType.ALL,

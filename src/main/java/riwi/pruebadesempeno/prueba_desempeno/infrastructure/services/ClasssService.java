@@ -2,6 +2,7 @@ package riwi.pruebadesempeno.prueba_desempeno.infrastructure.services;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,9 @@ import riwi.pruebadesempeno.prueba_desempeno.utils.exceptions.BadRequestExceptio
 
 @Service
 @AllArgsConstructor
-public class ClassService implements IClassService {
+public class ClasssService implements IClassService {
 
+    @Autowired
     private final ClassRepository classRepository;
 
     @Override
@@ -40,13 +42,7 @@ public class ClassService implements IClassService {
         return this.entityToResponse(this.find(id));
     }
 
-    @Override
-    public Page<ClassResponse> getAll(int page, int size, String name,String description) {
-        if (page < 0)
-            page = 0;
-        PageRequest pagination = PageRequest.of(page, size);
-        return this.classRepository.findAll(pagination).map(this::entityToResponse);
-    }
+
 
     @Override
     public ClassResponse update(ClassRequest request, Long id) {
@@ -81,5 +77,16 @@ public class ClassService implements IClassService {
 
         return this.classRepository.findById(id).orElseThrow(() -> new BadRequestException("No se encontro el id"));
     }
+
+    @Override
+    public Page<ClassResponse> getAll(int page, int size) {
+        
+
+
+
+        return null;
+    }
+
+   
 
 }
